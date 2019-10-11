@@ -84,3 +84,9 @@ With some experiments, we chose --emsize 300 --nhid 1800 --bptt 300 is the best 
 
 
 
+## Members
++ Associate Professor Nguyen Le Minh (Jaist)
++ Professor Tomoko Matsui (ISM)
++ Ph.D. Tran Duc Vu (Jaist)
++ MS. Nguyen Ha Thanh (Jaist)
++ MS. Dang Tran Binh (Jaist)
