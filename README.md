@@ -1,14 +1,14 @@
-#title
+# title
 
-##Overview
+## Overview
 
 
 In MicroNet Challenge, we consider “WikiText-103 Language Modeling” task. This task required number of parameters and math operations of the learned model are minimum. And, the need condition is the perplexity of model below 35 on the test set. With this goal, we proposed an approach based on QRNN model (Quasi-Recurrent Neural Networks). By turing parameter, we reduced the number of parameters and sure the perplexity below 35. Parameter tuning focus on 3 parameters: sequence length, embedding size and number of hidden units per layer. After changing, number of parameters of our model reduce approx 32% when compared to the default model.
 
-##Method
+## Method
 
 
-###Base Model
+### Base Model
 
 
 
@@ -36,14 +36,14 @@ With this setting, the result of QRNN when run on wiki-103 dataset:
 Total parameters: 153,886,638
 Test perplexity: 32.58 
 
-###Parameter Tuning
+### Parameter Tuning
 
 
 
 We focus on reducing the number of parameters of model follow 2 ways: Sequence length (--bptt) and Embedding size and number of hidden units per layer(--emsize, --nhid).
 
 
-####Sequence length in training 
+#### Sequence length in training 
 
 
 In QRNN model, there is a parameter is “--bptt”. It is sequence length. In training, all training data was connected and created a long sequence. Sequence length will divide the sequence for sub-sequences with length is the value of “-bptt”. We tried to change this value to analysis effective for ppl. The recommended value is 140. The default value is 70. The figure shows the perplexity with the change of sequence length. 
@@ -52,7 +52,7 @@ In QRNN model, there is a parameter is “--bptt”. It is sequence length. In t
 
 
 
-####Embedding size and number of hidden units per layer
+#### Embedding size and number of hidden units per layer
 
 
 With two parameters, we expect change value to reduce the number of parameters of model and keep value of test ppl < 35. The default model use the embedding size is 400 and the number of hidden units per layer is 2500. With the setting, the default had 153M parameter and the perplexity reached 32.58. Our idea is to reduce the number of parameters. This make increase perplexity. So that, we try to balance for ppl not over 35. To reduce parameter, embedding size decreased to 300. This number is a popular choice for embedding size in deep learning models. With that, the number of hidden units per layer also change for fit. The table shows some our experiments with this changing.
@@ -65,10 +65,10 @@ With some experiments, we chose --emsize 300 --nhid 1800 --bptt 300 is the best 
 
 
 
-##System Configuration
+## System Configuration
 
 
-###Software requirements (codebase)
+### Software requirements (codebase)
 
 
 + Python 3
@@ -76,7 +76,7 @@ With some experiments, we chose --emsize 300 --nhid 1800 --bptt 300 is the best 
 + pynvrtc (NVIDIA's Python Bindings to NVRTC) (pip install git+git://github.com/NVIDIA/pynvrtc/commit/6417a2896ff8a99f2c4d4195de657671a77c89a0)
 
 
-###How to run
+### How to run
 
 
 + Install pytorch 0.4, pynvrtc.
