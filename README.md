@@ -101,12 +101,12 @@ counter.print_summary(0, PARAMETER_BITS, ACCUMULATOR_BITS, INPUT_BITS, summarize
 
 ### Training
 
-```python
+```bash
 python -u main.py --epochs 20 --nlayers 4 --emsize 300 --nhid 1800 --alpha 0 --beta 0 --dropoute 0 --dropouth 0.1 --dropouti 0.1 --dropout 0.1 --wdrop 0 --wdecay 0 --bptt 300 --batch_size 40 --optimizer adam --lr 1e-3 --data data/wikitext-103 --save WT103.12hr.QRNN.pt --when 12 --model QRNN
 ```
 
 ### Checkpoint Test
-```python
+```bash
 python test.py
 ```
 
