@@ -94,7 +94,7 @@ counter.print_summary(0, PARAMETER_BITS, ACCUMULATOR_BITS, INPUT_BITS, summarize
 ### Software Requirements (codebase)
 
 
-+ Python 3
++ Python 3.7
 + Pytorch: 0.4
 + pynvrtc (NVIDIA's Python Bindings to NVRTC) (pip install git+git://github.com/NVIDIA/pynvrtc/commit/6417a2896ff8a99f2c4d4195de657671a77c89a0)
 
