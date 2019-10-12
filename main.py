@@ -297,3 +297,9 @@ print('=' * 89)
 print('| End of training | test loss {:5.2f} | test ppl {:8.2f} | test bpc {:8.3f}'.format(
     test_loss, math.exp(test_loss), test_loss / math.log(2)))
 print('=' * 89)
+
+# Save vocab only
+del corpus.train
+del corpus.valid
+del corpus.test
+torch.save(corpus,'corpus-wikitext-103.vocab-only.data')
