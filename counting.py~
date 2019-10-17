@@ -86,8 +86,9 @@ Attributes:
   activation: str, type of activation applied to the output.
 """
 FullyConnected = collections.namedtuple(
-    'FullyConnected', ['kernel_shape', 'use_bias', 'activation','tied_weights'])
-FullyConnected.__new__.__defaults__ = (0, True, None, None)
+    'FullyConnected', ['kernel_shape', 'use_bias', 'activation','tied_weights'],
+    defaults=(0,True,None,None)
+    )
 
 QRNN = collections.namedtuple(
   'LSTM',['input_size','hidden_size','window','output_gate']
